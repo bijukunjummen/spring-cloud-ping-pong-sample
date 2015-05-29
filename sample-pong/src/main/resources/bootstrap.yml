@@ -1,0 +1,11 @@
+---
+spring:
+  application:
+    name: sample-pong
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: SAMPLE-CONFIG
+
+

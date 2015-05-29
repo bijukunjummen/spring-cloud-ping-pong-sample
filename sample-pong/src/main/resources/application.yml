@@ -1,0 +1,7 @@
+---
+server:
+  port: 8082
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port:8082}

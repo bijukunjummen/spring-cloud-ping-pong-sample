@@ -1,0 +1,17 @@
+---
+server:
+  port: 8080
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port:8080}
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+
+samplepong:
+  ribbon:
+    DeploymentContextBasedVipAddresses: sample-pong
+    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+    ReadTimeout: 5000
+    MaxAutoRetries: 2

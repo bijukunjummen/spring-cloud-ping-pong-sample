@@ -1,0 +1,9 @@
+---
+spring:
+  application:
+    name: sample-ping
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: SAMPLE-CONFIG
