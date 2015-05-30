@@ -5,3 +5,6 @@ server:
 eureka:
   instance:
     nonSecurePort: ${server.port:8082}
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/

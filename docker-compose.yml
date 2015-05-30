@@ -1,0 +1,43 @@
+sampleeureka:
+  image: "sample-eureka:1.0.0-SNAPSHOT"
+  hostname: sampleeureka
+  name: sampleeureka
+  ports:
+   - "8761:8761"
+
+sampleconfig:
+  image: "sample-config:1.0.0-SNAPSHOT"
+  hostname: sampleconfig
+  name: sampleconfig
+  links:
+    - sampleeureka
+  environment:
+     EUREKA_HOST: sampleeureka
+     EUREKA_PORT: 8761
+  ports:
+    - "8888:8888"
+
+samplepong:
+  image: sample-pong:1.0.0-SNAPSHOT
+  hostname: samplepong
+  links:
+    - sampleeureka
+    - sampleconfig
+  environment:
+     EUREKA_HOST: sampleeureka
+     EUREKA_PORT: 8761
+  ports:
+    - "8082:8082"
+
+sampleping:
+  image: sample-ping:1.0.0-SNAPSHOT
+  hostname: sampleping
+  links:
+    - sampleeureka
+    - sampleconfig
+    - samplepong
+  environment:
+     EUREKA_HOST: sampleeureka
+     EUREKA_PORT: 8761
+  ports:
+    - "8080:8080"

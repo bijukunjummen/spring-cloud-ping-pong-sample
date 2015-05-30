@@ -16,5 +16,5 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${eureka.host:localhost}:8761/eureka/
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
 
