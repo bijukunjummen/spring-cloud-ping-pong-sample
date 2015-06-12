@@ -32,6 +32,7 @@ pingApp.controller("HomeController", function ($scope, pingFactory) {
     $scope.getMessageResponse = function(message) {
         pingFactory.getMessageResponse(message).success(function(data){
             $scope.message = data;
+            $scope.errorMessage = "";
         }).error(function(data, status, headers, config) {
             $scope.errorMessage = data.error;
         });

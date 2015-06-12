@@ -39,7 +39,8 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <configuration>
                     <imageName>${project.name}:${project.version}</imageName>
-                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+                    <skipDockerBuild>false</skipDockerBuild>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
