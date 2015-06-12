@@ -22,7 +22,7 @@
                         <input type="text" class="form-control" id="inputmessage" ng-model="inputMessage" placeholder="Enter Message to Send">
                     </div>
                     <div class="form-group" ng-if="message != ''">
-                        <label>Response From Server: {{message}}</label>
+                        <label>Request Sent: {{message.received}}, Response From Server: {{message.payload}}</label>
                     </div>
                     <button type="submit" class="btn btn-default" ng-click="getMessageResponse(inputMessage)">Submit</button>
                 </form>

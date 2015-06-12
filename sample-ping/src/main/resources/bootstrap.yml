@@ -7,3 +7,10 @@ spring:
       discovery:
         enabled: true
         serviceId: SAMPLE-CONFIG
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port:8080}
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
