@@ -24,6 +24,7 @@ pingApp.factory("pingFactory", function ($http) {
 
 
 pingApp.controller("HomeController", function ($scope, pingFactory) {
+
     function init() {
         $scope.message = "";
         $scope.errorMessage = "";

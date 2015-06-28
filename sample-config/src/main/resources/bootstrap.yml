@@ -1,0 +1,14 @@
+---
+spring:
+  application:
+    name: sample-config
+  profiles:
+    active: native
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port:8888}
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+
