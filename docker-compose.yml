@@ -44,3 +44,18 @@ sampleping:
      SPRING_PROFILES_ACTIVE: docker
   ports:
     - "8080:8080"
+
+samplemonitor:
+  image: sample-monitor:1.0.0-SNAPSHOT
+  hostname: samplemonitor
+  links:
+    - sampleeureka
+    - sampleconfig
+    - samplepong
+    - sampleping
+  environment:
+     EUREKA_HOST: sampleeureka
+     EUREKA_PORT: 8761
+     SPRING_PROFILES_ACTIVE: docker
+  ports:
+    - "8989:8989"

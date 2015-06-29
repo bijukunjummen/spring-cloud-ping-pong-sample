@@ -7,7 +7,6 @@ import org.bk.consumer.feign.PongClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service("hystrixPongClient")
 public class HystrixWrappedPongClient implements PongClient {
@@ -18,7 +17,7 @@ public class HystrixWrappedPongClient implements PongClient {
 
     @Override
     @HystrixCommand(fallbackMethod = "fallBackCall")
-    public MessageAcknowledgement sendMessage(@RequestBody Message message) {
+    public MessageAcknowledgement sendMessage(Message message) {
         return this.feignPongClient.sendMessage(message);
     }
 
