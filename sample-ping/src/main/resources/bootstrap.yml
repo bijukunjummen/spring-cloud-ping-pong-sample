@@ -4,6 +4,7 @@ spring:
     name: sample-ping
   cloud:
     config:
+      enabled: false
       discovery:
         enabled: true
         serviceId: SAMPLE-CONFIG

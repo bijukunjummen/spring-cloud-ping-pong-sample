@@ -4,9 +4,7 @@ spring:
     name: sample-pong
   cloud:
     config:
-      discovery:
-        enabled: true
-        serviceId: SAMPLE-CONFIG
+      enabled: false
 
 eureka:
   instance:

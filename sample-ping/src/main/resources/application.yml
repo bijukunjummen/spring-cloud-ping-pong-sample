@@ -8,3 +8,7 @@ samplepong:
     NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
     ReadTimeout: 5000
     MaxAutoRetries: 2
+
+
+another:
+  key: anotherkeyvalue
