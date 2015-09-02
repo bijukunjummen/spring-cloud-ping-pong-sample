@@ -4,8 +4,10 @@ spring:
     name: sample-pong
   cloud:
     config:
-      enabled: false
-
+      enabled: true
+      discovery:
+        enabled: true
+        serviceId: SAMPLE-CONFIG
 eureka:
   instance:
     nonSecurePort: ${server.port:8082}

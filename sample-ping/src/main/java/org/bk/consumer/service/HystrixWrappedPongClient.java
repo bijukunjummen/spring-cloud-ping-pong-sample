@@ -16,7 +16,7 @@ public class HystrixWrappedPongClient implements PongClient {
     private PongClient feignPongClient;
 
     @Override
-    @HystrixCommand(fallbackMethod = "fallBackCall")
+    @HystrixCommand(groupKey = "pongGroup", fallbackMethod = "fallBackCall")
     public MessageAcknowledgement sendMessage(Message message) {
         return this.feignPongClient.sendMessage(message);
     }
