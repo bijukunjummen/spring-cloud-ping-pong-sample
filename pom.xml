@@ -21,7 +21,7 @@
     <parent>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-parent</artifactId>
-        <version>Angel.SR3</version>
+        <version>Angel.SR4</version>
         <relativePath/>
     </parent>
 
@@ -67,4 +67,16 @@
             </plugins>
         </pluginManagement>
     </build>
+    <repositories>
+        <repository>
+            <id>spring-release</id>
+            <url>http://repo.spring.io/release/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-release</id>
+            <url>http://repo.spring.io/release/</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
