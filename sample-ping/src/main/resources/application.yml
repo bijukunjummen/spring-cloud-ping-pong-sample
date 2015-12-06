@@ -5,10 +5,15 @@ server:
 samplepong:
   ribbon:
     DeploymentContextBasedVipAddresses: sample-pong
-    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
     ReadTimeout: 5000
     MaxAutoRetries: 2
 
+samplepongdirect:
+  ribbon:
+    DeploymentContextBasedVipAddresses: sample-pong
+    listOfServers: localhost:8082
+    ReadTimeout: 5000
+    MaxAutoRetries: 2
 
 another:
   key: anotherkeyvalue

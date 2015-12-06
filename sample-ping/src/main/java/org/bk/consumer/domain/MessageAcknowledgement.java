@@ -1,6 +1,9 @@
 package org.bk.consumer.domain;
 
 
+import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
+
 public class MessageAcknowledgement {
 
     private String id;
@@ -39,5 +42,14 @@ public class MessageAcknowledgement {
 
     public void setReceived(String received) {
         this.received = received;
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("id", id)
+                .add("received", received)
+                .add("payload", payload)
+                .toString();
     }
 }
