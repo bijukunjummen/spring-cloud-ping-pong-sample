@@ -1,14 +1,12 @@
 sampleeureka:
   image: "sample-eureka:1.0.0-SNAPSHOT"
   hostname: sampleeureka
-  name: sampleeureka
   ports:
    - "8761:8761"
 
 sampleconfig:
   image: "sample-config:1.0.0-SNAPSHOT"
   hostname: sampleconfig
-  name: sampleconfig
   links:
     - sampleeureka
   environment:
