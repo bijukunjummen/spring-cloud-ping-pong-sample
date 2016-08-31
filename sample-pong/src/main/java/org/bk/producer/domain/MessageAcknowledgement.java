@@ -1,6 +1,8 @@
 package org.bk.producer.domain;
 
 
+import java.util.Objects;
+
 public class MessageAcknowledgement {
 
     private String id;
@@ -39,5 +41,29 @@ public class MessageAcknowledgement {
 
     public void setReceived(String received) {
         this.received = received;
+    }
+
+    @Override
+    public String toString() {
+        return "MessageAcknowledgement{" +
+                "id='" + id + '\'' +
+                ", received='" + received + '\'' +
+                ", payload='" + payload + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MessageAcknowledgement that = (MessageAcknowledgement) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(received, that.received) &&
+                Objects.equals(payload, that.payload);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, received, payload);
     }
 }

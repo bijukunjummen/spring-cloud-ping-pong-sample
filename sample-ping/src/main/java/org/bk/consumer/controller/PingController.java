@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PingController {
 
     @Autowired
-    @Qualifier("ribbonPongClient")
+    @Qualifier("hystrixPongClient")
     private PongClient pongClient;
 
     @RequestMapping("/dispatch")

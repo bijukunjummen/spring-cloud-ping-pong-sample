@@ -1,0 +1,14 @@
+---
+server:
+  port: 7080
+
+
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    samplepong:
+      path: /samplepong/**
+      stripPrefix: true
+      serviceId: sample-pong
+      location: sample-pong

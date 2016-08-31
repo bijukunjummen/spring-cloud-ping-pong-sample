@@ -17,3 +17,15 @@ samplepongdirect:
 
 another:
   key: anotherkeyvalue
+
+
+hystrix:
+  command:
+    pongCommand:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+      circuitBreaker:
+        requestVolumeThreshold: 3
+        sleepWindowInMilliseconds: 2000

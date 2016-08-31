@@ -1,3 +1,7 @@
 ---
 reply:
   message: Pong From Configuration Server
+
+logging:
+  level:
+    root: INFO
