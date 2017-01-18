@@ -22,7 +22,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.0.RELEASE</version>
+        <version>1.4.3.RELEASE</version>
     </parent>
 
     <properties>
@@ -60,7 +60,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Brixton.SR4</version>
+                <version>Camden.SR4</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -79,7 +79,7 @@
                 <plugin>
                     <groupId>com.spotify</groupId>
                     <artifactId>docker-maven-plugin</artifactId>
-                    <version>0.2.9</version>
+                    <version>0.4.13</version>
                     <configuration>
                         <skipDockerBuild>true</skipDockerBuild>
                     </configuration>
