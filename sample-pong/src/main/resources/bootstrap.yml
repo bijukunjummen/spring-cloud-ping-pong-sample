@@ -11,6 +11,9 @@ spring:
 eureka:
   instance:
     nonSecurePort: ${server.port:8082}
+    homePageUrlPath: /pong
+    metadata-map:
+      context-path: ${server.context-path:/}
   client:
     serviceUrl:
       defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/

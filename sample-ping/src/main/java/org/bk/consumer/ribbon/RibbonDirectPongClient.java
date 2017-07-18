@@ -21,7 +21,7 @@ public class RibbonDirectPongClient implements PongClient {
 
     @Override
     public MessageAcknowledgement sendMessage(Message message) {
-        String pongServiceUrl = "http://samplepongdirect/message";
+        String pongServiceUrl = "http://samplepongdirect/pong/message";
         HttpEntity<Message> requestEntity = new HttpEntity<>(message);
         ResponseEntity<MessageAcknowledgement> response =  this.restTemplate.exchange(pongServiceUrl, HttpMethod.POST, requestEntity, MessageAcknowledgement.class, Maps.newHashMap());
         return response.getBody();
