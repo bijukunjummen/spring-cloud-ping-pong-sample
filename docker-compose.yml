@@ -1,59 +1,61 @@
-sampleeureka:
-  image: "sample-eureka:1.0.0-SNAPSHOT"
-  hostname: sampleeureka
-  ports:
-   - "8761:8761"
+version: '3'
+services:
+  sampleeureka:
+    image: "sample-eureka:1.1.0-SNAPSHOT"
+    hostname: sampleeureka
+    ports:
+    - "8761:8761"
 
-sampleconfig:
-  image: "sample-config:1.0.0-SNAPSHOT"
-  hostname: sampleconfig
-  links:
-    - sampleeureka
-  environment:
-     EUREKA_HOST: sampleeureka
-     EUREKA_PORT: 8761
-  ports:
-    - "8888:8888"
+  sampleconfig:
+    image: "sample-config:1.1.0-SNAPSHOT"
+    hostname: sampleconfig
+    links:
+      - sampleeureka
+    environment:
+      EUREKA_HOST: sampleeureka
+      EUREKA_PORT: 8761
+    ports:
+      - "8888:8888"
 
-samplepong:
-  image: sample-pong:1.0.0-SNAPSHOT
-  hostname: samplepong
-  links:
-    - sampleeureka
-    - sampleconfig
-  environment:
-     EUREKA_HOST: sampleeureka
-     EUREKA_PORT: 8761
-     SERVER_PORT: 8080
-     SPRING_PROFILES_ACTIVE: docker
-  ports:
-    - "8082:8080"
+  samplepong:
+    image: sample-pong:1.1.0-SNAPSHOT
+    hostname: samplepong
+    links:
+      - sampleeureka
+      - sampleconfig
+    environment:
+      EUREKA_HOST: sampleeureka
+      EUREKA_PORT: 8761
+      SERVER_PORT: 8080
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "8082:8080"
 
-sampleping:
-  image: sample-ping:1.0.0-SNAPSHOT
-  hostname: sampleping
-  links:
-    - sampleeureka
-    - sampleconfig
-    - samplepong
-  environment:
-     EUREKA_HOST: sampleeureka
-     EUREKA_PORT: 8761
-     SPRING_PROFILES_ACTIVE: docker
-  ports:
-    - "8080:8080"
+  sampleping:
+    image: sample-ping:1.1.0-SNAPSHOT
+    hostname: sampleping
+    links:
+      - sampleeureka
+      - sampleconfig
+      - samplepong
+    environment:
+      EUREKA_HOST: sampleeureka
+      EUREKA_PORT: 8761
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "8080:8080"
 
-samplemonitor:
-  image: sample-monitor:1.0.0-SNAPSHOT
-  hostname: samplemonitor
-  links:
-    - sampleeureka
-    - sampleconfig
-    - samplepong
-    - sampleping
-  environment:
-     EUREKA_HOST: sampleeureka
-     EUREKA_PORT: 8761
-     SPRING_PROFILES_ACTIVE: docker
-  ports:
-    - "8989:8989"
+  samplemonitor:
+    image: sample-monitor:1.1.0-SNAPSHOT
+    hostname: samplemonitor
+    links:
+      - sampleeureka
+      - sampleconfig
+      - samplepong
+      - sampleping
+    environment:
+      EUREKA_HOST: sampleeureka
+      EUREKA_PORT: 8761
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "8989:8989"
