@@ -1,13 +1,13 @@
 version: '3'
 services:
   sampleeureka:
-    image: "sample-eureka:1.1.0-SNAPSHOT"
+    image: "sample-eureka:1.2.0-SNAPSHOT"
     hostname: sampleeureka
     ports:
     - "8761:8761"
 
   sampleconfig:
-    image: "sample-config:1.1.0-SNAPSHOT"
+    image: "sample-config:1.2.0-SNAPSHOT"
     hostname: sampleconfig
     links:
       - sampleeureka
@@ -18,7 +18,7 @@ services:
       - "8888:8888"
 
   samplepong:
-    image: sample-pong:1.1.0-SNAPSHOT
+    image: "sample-pong:1.2.0-SNAPSHOT"
     hostname: samplepong
     links:
       - sampleeureka
@@ -32,7 +32,7 @@ services:
       - "8082:8080"
 
   sampleping:
-    image: sample-ping:1.1.0-SNAPSHOT
+    image: "sample-ping:1.2.0-SNAPSHOT"
     hostname: sampleping
     links:
       - sampleeureka
@@ -46,7 +46,7 @@ services:
       - "8080:8080"
 
   samplemonitor:
-    image: sample-monitor:1.1.0-SNAPSHOT
+    image: "sample-monitor:1.2.0-SNAPSHOT"
     hostname: samplemonitor
     links:
       - sampleeureka
