@@ -90,12 +90,12 @@
     <repositories>
         <repository>
             <id>spring-release</id>
-            <url>http://repo.spring.io/release/</url>
+            <url>https://repo.spring.io/release/</url>
         </repository>
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
-            <url>http://repo.spring.io/milestone</url>
+            <url>https://repo.spring.io/milestone</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -104,12 +104,12 @@
     <pluginRepositories>
         <pluginRepository>
             <id>spring-release</id>
-            <url>http://repo.spring.io/release/</url>
+            <url>https://repo.spring.io/release/</url>
         </pluginRepository>
         <pluginRepository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
-            <url>http://repo.spring.io/milestone</url>
+            <url>https://repo.spring.io/milestone</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
