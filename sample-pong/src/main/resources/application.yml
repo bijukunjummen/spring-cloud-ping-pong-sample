@@ -1,7 +1,6 @@
 ---
 server:
   port: 8082
-#  context-path: /pong
 
 
 reply:

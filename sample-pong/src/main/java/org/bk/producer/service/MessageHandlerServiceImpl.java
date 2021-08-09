@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Mono;
 
 @Service
 public class MessageHandlerServiceImpl implements MessageHandlerService {
@@ -21,11 +22,10 @@ public class MessageHandlerServiceImpl implements MessageHandlerService {
     }
 
     @Override
-    public MessageAcknowledgement handleMessage(Message message) {
-        logger.info("About to Acknowledge");
-
-        return new MessageAcknowledgement(message.getId(), message.getPayload(), this.replyMessage);
+    public Mono<MessageAcknowledgement> handleMessage(Message message) {
+        return Mono.fromCallable(() -> {
+            logger.info("About to Acknowledge");
+            return new MessageAcknowledgement(message.getId(), message.getPayload(), this.replyMessage);
+        });
     }
-
-
 }

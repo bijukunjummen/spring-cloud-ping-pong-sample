@@ -8,6 +8,9 @@ spring:
       discovery:
         enabled: true
         serviceId: SAMPLE-CONFIG
+
+  config:
+    import: "optional:configserver:"
 eureka:
   instance:
     nonSecurePort: ${server.port:8082}

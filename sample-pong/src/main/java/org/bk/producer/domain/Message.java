@@ -13,9 +13,6 @@ public class Message {
     @JsonProperty("delay_by")
     private int delayBy = 0;
 
-    public Message() {
-    }
-
     public Message(String id, String payload, boolean throwException, int delayBy) {
         this.id = id;
         this.payload = payload;
